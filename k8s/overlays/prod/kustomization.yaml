@@ -7,15 +7,15 @@ resources:
 images:
 - name: ghcr.io/jtteotn9/tea-bot
   newName: ghcr.io/jtteotn9/tea-bot
-  newTag: latest
+  newTag: sha-9f39027
 
 patches:
-- target:
-    kind: Deployment
-    name: tea-bot
-  patch: |-
+- patch: |-
     - op: add
       path: /spec/template/spec/containers/0/envFrom
       value:
         - secretRef:
             name: tea-bot-env
+  target:
+    kind: Deployment
+    name: tea-bot
