@@ -6,7 +6,7 @@ metadata:
   labels:
     app: tea-bot
 spec:
-  replicas: 1
+  #replicas: 1
   strategy:
     type: Recreate
   selector:
@@ -21,6 +21,6 @@ spec:
       - name: tea-bot
         image: ghcr.io/jtteotn9/tea-bot:latest
         imagePullPolicy: Always
-        envFrom:
-        - secretRef:
-            name: tea-bot-env
+        #envFrom:
+        #- secretRef:
+        #    name: tea-bot-env
