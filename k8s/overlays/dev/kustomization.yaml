@@ -7,12 +7,16 @@ resources:
 nameSuffix: -dev
 
 patches:
-- target:
-    kind: Deployment
-    name: tea-bot
-  patch: |-
+- patch: |-
     - op: add
       path: /spec/template/spec/containers/0/envFrom
       value:
         - secretRef:
             name: tea-bot-env-dev
+  target:
+    kind: Deployment
+    name: tea-bot
+images:
+- name: ghcr.io/jtteotn9/tea-bot
+  newName: ghcr.io/jtteotn9/tea-bot
+  newTag: sha-4f8a43e
