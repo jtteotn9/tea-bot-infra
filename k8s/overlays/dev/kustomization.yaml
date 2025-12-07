@@ -19,4 +19,4 @@ patches:
 images:
 - name: ghcr.io/jtteotn9/tea-bot
   newName: ghcr.io/jtteotn9/tea-bot
-  newTag: sha-4716997
+  newTag: sha-df77093
